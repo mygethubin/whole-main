@@ -10,17 +10,22 @@
 
 <hr>
 
-<p id="demo">This only shows when the window is more than 500.</p>
-<p id="message" style="display: none;">Please use this on a desktop.</p>
-
-
-
 <script>
-if (window.innerWidth < 500){
-    document.getElementById("demo").style.display = "none";
-    document.getElementById("message").style.display = "block";
-}
-</script>
+    var userAgent;
+  
+    (function() {
+  
+      userAgent = navigator.userAgent.toLowerCase();
+  
+      if (typeof orientation !== 'undefined' || userAgent.indexOf('mobile') >= 0); {
+        alert('open in desktop');
+      } else {
+        document.body.innerHTML = 'your HTML as a string here';
+      }
+  
+    })();
+  
+  </script>
 
 </body>
 
